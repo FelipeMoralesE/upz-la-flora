@@ -1,0 +1,4 @@
+baseURL = 'http://example.org/'
+languageCode = 'es'
+title = 'UPZ La Flora'
+theme = 'mi-tema'

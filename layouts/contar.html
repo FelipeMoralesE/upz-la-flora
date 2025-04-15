@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPZ La Flora</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/contar.css" />
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
+    <div class="container-fluid">
+
+      <!-- Botón naranja izquierdo -->
+      <a class="btn btn-contar-historia me-3" href="/contar/">CONTAR MI HISTORIA</a>
+
+      <!-- Botón responsive -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse justify-content-center" id="menu-principal">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+
+          <!-- Murales -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menu-murales" data-bs-toggle="dropdown">Murales</a>
+            <ul class="dropdown-menu menu-desplegable">
+              <li><a class="dropdown-item" href="/autores/">Autores</a></li>
+              <li><a class="dropdown-item" href="/mapa/">Mapa</a></li>
+            </ul>
+          </li>
+
+          <!-- Archivos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
+            <ul class="dropdown-menu menu-desplegable">
+              <li><a class="dropdown-item" href="/entrevistas/">Entrevistas</a></li>
+              <li><a class="dropdown-item" href="/informacion/">Datos</a></li>
+            </ul>
+          </li>
+
+          <!-- Otros enlaces -->
+          <li class="nav-item"><a class="nav-link" href="/historia/">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="/datos/">Datos demográficos</a></li>
+
+       <!-- Acerca de -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
+        <ul class="dropdown-menu menu-desplegable">
+          <li><a class="dropdown-item" href="/nosotros/">Historias de barrio</a></li>
+          <li><a class="dropdown-item" href="/nosotros/">Caminos de Paz</a></li>
+          <li><a class="dropdown-item" href="/nosotros/">Entidades relacionadas</a></li>
+        </ul>
+      </li>
+        </ul>
+      </div>
+
+      <!-- Logos derecha -->
+      <div class="d-flex align-items-center gap-3 ms-auto logos">
+        <a href="/">
+            <img src="/img_Home/logo-javeriana.png" alt="Javeriana" height="40" />
+          </a>
+        <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="40" />
+        <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="40" />
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<br>
+
+  <!-- SECCIÓN: Formulario para contar historia -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <label for="historia" class="form-label fw-bold">Escribe tu historia aquí:</label>
+      <div class="input-group">
+        <textarea class="form-control" id="historia" rows="4" placeholder="Escribe algo bonito..."></textarea>
+        <button class="btn btn-secondary" type="button" id="btnEnviar">
+          <span style="font-size: 1.5rem;">⬆️</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN: Comentarios mostrados -->
+  <section class="py-5 text-white bg-naranja">
+    <div class="container">
+      <div id="historias" class="d-flex flex-column gap-4">
+        <div class="d-flex align-items-start gap-3">
+          <span class="fs-1">👤</span>
+          <p class="mb-0">Hola me llamo Loren y soy parte de la comunidad. Soy una niña de 16 años que va al colegio...</p>
+        </div>
+        <div class="d-flex align-items-start gap-3">
+          <span class="fs-1">👤</span>
+          <p class="mb-0">Buenas tardes, soy el señor Andrés y soy un señor de 76 años que vive cerca de Tiriguaque...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN: Imagen decorativa inferior -->
+  <section>
+    <img src="/img_Contar/flora.png" alt="Decoración historias" class="img-fluid w-100" />
+  </section>
+  
+  <!-- JS para mostrar nueva historia -->
+  <script>
+    document.getElementById('btnEnviar').addEventListener('click', function () {
+      const texto = document.getElementById('historia').value.trim();
+      if (texto !== "") {
+        const contenedor = document.getElementById('historias');
+        const nuevaHistoria = document.createElement('div');
+        nuevaHistoria.className = "d-flex align-items-start gap-3";
+        nuevaHistoria.innerHTML = `
+          <span class="fs-1">👤</span>
+          <p class="mb-0">${texto}</p>
+        `;
+        contenedor.prepend(nuevaHistoria);
+        document.getElementById('historia').value = "";
+      }
+    });
+  </script>
+
+
+
+  <section class="seccion-apoyo">
+
+    <!-- Franja superior amarilla -->
+    <div class="franja-amarilla text-center text-white d-flex justify-content-center align-items-center">
+      <h2 class="fw-bold m-0">
+        Apoya nuestra pagina con <br> tus ideas
+      </h2>
+    </div>
+  
+    <!-- Imagen decorativa central (una sola imagen) -->
+    <div class="contenedor-imagen">
+      <img src="/img_Contar/apoyo-final.png" alt="Imagen apoyo visual" class="img-apoyo" />
+    </div>
+  
+    <!-- Franja inferior verde -->
+    <div class="franja-verde d-flex justify-content-center align-items-center gap-3 text-white">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icono-github" />
+      <span class="fs-4 fw-bold">Link de github</span>
+    </div>
+  
+  </section>
+  
+
+  
+  <!-- SECCIÓN: Enlaces -->
+<section class="enlaces-informacion text-center py-5">
+    <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
+    <div class="d-flex flex-wrap justify-content-center gap-5">
+      <img src="/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80" />
+      <img src="/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano" height="80" />
+    </div>
+  </section>
+
+  <!-- FOOTER institucional -->
+<footer class="footer-javeriana">
+    <img src="/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" />
+  </footer>
+
+  
+
+</body>
+</html>

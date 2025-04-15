@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPZ La Flora</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/historia.css" />
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="navbar navbar-expand-lg encabezado px-3 py-2 fixed-top">
+    <div class="container-fluid">
+
+      <!-- Botón naranja izquierdo -->
+      <a class="btn btn-contar-historia me-3" href="/contar/">CONTAR MI HISTORIA</a>
+
+      <!-- Botón responsive -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse justify-content-center" id="menu-principal">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+
+          <!-- Murales -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menu-murales" data-bs-toggle="dropdown">Murales</a>
+            <ul class="dropdown-menu menu-desplegable">
+              <li><a class="dropdown-item" href="/autores/">Autores</a></li>
+              <li><a class="dropdown-item" href="/mapa/">Mapa</a></li>
+            </ul>
+          </li>
+
+          <!-- Archivos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menu-archivos" data-bs-toggle="dropdown">Archivos</a>
+            <ul class="dropdown-menu menu-desplegable">
+              <li><a class="dropdown-item" href="/entrevistas/">Entrevistas</a></li>
+              <li><a class="dropdown-item" href="/informacion/">Datos</a></li>
+            </ul>
+          </li>
+
+          <!-- Otros enlaces -->
+          <li class="nav-item"><a class="nav-link" href="/historia/">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="/datos/">Datos demográficos</a></li>
+
+       <!-- Acerca de -->
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="menu-nosotros" data-bs-toggle="dropdown">Acerca de nosotros</a>
+        <ul class="dropdown-menu menu-desplegable">
+          <li><a class="dropdown-item" href="/nosotros/">Historias de barrio</a></li>
+          <li><a class="dropdown-item" href="/nosotros/">Caminos de Paz</a></li>
+          <li><a class="dropdown-item" href="/nosotros/">Entidades relacionadas</a></li>
+        </ul>
+      </li>
+        </ul>
+      </div>
+
+      <!-- Logos derecha -->
+      <div class="d-flex align-items-center gap-3 ms-auto logos">
+        <a href="/">
+            <img src="/img_Datos/logo-javeriana.png" alt="Javeriana" height="40" />
+          </a>
+        <img src="/img_Datos/logo-prosofi.png" alt="PROSOFI" height="40" />
+        <img src="/img_Datos/logo-ojds.png" alt="Observatorio" height="40" />
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<br>
+  <!-- SECCIÓN: Línea de tiempo -->
+  <section class="linea-tiempo py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">Línea de tiempo</h2>
+      <div class="row justify-content-center">
+  
+        <div class="col-6 col-md-3 mb-4">
+          <div class="tarjeta-tiempo">
+            <div class="circulo" style="background-color: #f36e23;"></div>
+            <p>¿Cómo llegaron las personas a los barrios altos de Usme?</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-md-3 mb-4">
+          <div class="tarjeta-tiempo">
+            <div class="circulo" style="background-color: #726ff2;"></div>
+            <p>¿Cómo llegaron las personas a los barrios altos de Usme?</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-md-3 mb-4">
+          <div class="tarjeta-tiempo">
+            <div class="circulo" style="background-color: #cfc441;"></div>
+            <p>¿Cómo llegaron las personas a los barrios altos de Usme?</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-md-3 mb-4">
+          <div class="tarjeta-tiempo">
+            <div class="circulo" style="background-color: #b7360e;"></div>
+            <p>¿Cómo llegaron las personas a los barrios altos de Usme?</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECCIÓN: Línea de tiempo SLIDER-->
+  <section class="linea-tiempo-usme py-5 fondo-verde">
+    <div class="container">
+      <h2 class="text-center fw-bold text-white mb-5">Línea de tiempo de Usme</h2>
+  
+      <div id="carruselUsme" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+          <!-- Slide 1 -->
+          <div class="carousel-item active text-center">
+            <img src="/img_Historia/slide01.png" class="d-block mx-auto img-fluid imagen-tiempo" alt="1930">
+            <div class="mt-3 text-white">
+              <h5><strong>1930</strong></h5>
+              <p>Usme era un pueblo rural con fuerte presencia indígena y campesina.</p>
+            </div>
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="carousel-item text-center">
+            <img src="/img_Historia/slide02.png" class="d-block mx-auto img-fluid imagen-tiempo" alt="1954">
+            <div class="mt-3 text-white">
+              <h5><strong>1954</strong></h5>
+              <p>Se anexó al Distrito Especial de Bogotá como parte del proceso de expansión.</p>
+            </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="carousel-item text-center">
+            <img src="/img_Historia/slide03.png" class="d-block mx-auto img-fluid imagen-tiempo" alt="1980">
+            <div class="mt-3 text-white">
+              <h5><strong>1980</strong></h5>
+              <p>La violencia en el país impulsa migraciones masivas hacia los barrios de Usme.</p>
+            </div>
+          </div>
+  
+          <!-- Slide 4 -->
+          <div class="carousel-item text-center">
+            <img src="/img_Historia/slide04.png" class="d-block mx-auto img-fluid imagen-tiempo" alt="2000">
+            <div class="mt-3 text-white">
+              <h5><strong>2000</strong></h5>
+              <p>Surgen redes comunitarias e iniciativas de memoria y apropiación territorial.</p>
+            </div>
+          </div>
+  
+          <!-- Slide 5 -->
+          <div class="carousel-item text-center">
+            <img src="/img_Historia/slide05.png" class="d-block mx-auto img-fluid imagen-tiempo" alt="2020">
+            <div class="mt-3 text-white">
+              <h5><strong>2020</strong></h5>
+              <p>Nace el proyecto “Historias de barrio” de PROSOFI y el Observatorio Javeriano.</p>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselUsme" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselUsme" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+  
+        <!-- Indicadores -->
+        <div class="carousel-indicators mt-4">
+          <button type="button" data-bs-target="#carruselUsme" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1930"></button>
+          <button type="button" data-bs-target="#carruselUsme" data-bs-slide-to="1" aria-label="1954"></button>
+          <button type="button" data-bs-target="#carruselUsme" data-bs-slide-to="2" aria-label="1980"></button>
+          <button type="button" data-bs-target="#carruselUsme" data-bs-slide-to="3" aria-label="2000"></button>
+          <button type="button" data-bs-target="#carruselUsme" data-bs-slide-to="4" aria-label="2020"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: Enlaces -->
+<section class="enlaces-informacion text-center py-5">
+    <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
+    <div class="d-flex flex-wrap justify-content-center gap-5">
+      <img src="/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80" />
+      <img src="/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano" height="80" />
+    </div>
+  </section>
+
+  <!-- FOOTER institucional -->
+<footer class="footer-javeriana">
+    <img src="/img_Home/footer-javeriana.png" alt="Footer institucional Javeriana" class="img-fluid w-100" />
+  </footer>
+
+</body>
+</html>
