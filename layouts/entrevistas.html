@@ -63,16 +63,21 @@
         </ul>
       </div>
 
-      <!-- Logos derecha -->
-      <div class="d-flex align-items-center gap-3 ms-auto logos">
-        <a href="/">
-            <img src="/img_Datos/logo-javeriana.png" alt="Javeriana" height="40" />
-          </a>
-        <img src="/img_Datos/logo-prosofi.png" alt="PROSOFI" height="40" />
-        <img src="/img_Datos/logo-ojds.png" alt="Observatorio" height="40" />
-      </div>
+     <!-- Logos derecha -->
+<div class="d-flex align-items-center gap-3 ms-auto logos flex-wrap">
+  <a href="/">
+    <img src="/img_Home/logo-javeriana.png" alt="Javeriana" height="40" />
+  </a>
+  <img src="/img_Home/logo-prosofi.png" alt="PROSOFI" height="40" />
+  <img src="/img_Home/logo-ojds.png" alt="Observatorio" height="40" />
 
-    </div>
+  <!-- Nuevos logos (ajusta las rutas y nombres según tus carpetas) -->
+  <img src="/img_Home/logo-colegio.png" alt="Colegio Gabriel García Márquez" height="40" />
+  <img src="/img_Home/logo-umb.png" alt="UMB" height="40" />
+  <img src="/img_Home/logo-sabios.png" alt="Sabios del Territorio" height="40" />
+  <img src="/img_Home/logo-cosecha.png" alt="La Cosecha" height="40" />
+  <img src="/img_Home/logo-tunalito.png" alt="Tunalito" height="40" />
+</div>
   </header>
 
   <!-- Bootstrap JS -->
@@ -80,60 +85,76 @@
 <br>
 
 
-  <!-- Seccion entrevistas -->
-<section class="seccion-entrevistas text-white py-5">
-    <div class="container px-4">
-      <h2 class="fw-bold text-center mb-4">Entrevistas</h2>
-      <p class="texto-entrevista">
-        Esta sección recoge relatos en voz alta: fragmentos de vida contados por sus protagonistas. Son pequeñas entrevistas, trozos de memoria hablada que retratan el pulso de Usme. Aquí, las calles, las tiendas de esquina y las montañas lejanas tienen algo que decir. No son estadísticas ni discursos oficiales, sino el eco de la gente que convierte este lugar en más que un punto en el mapa. Las voces vienen de mercados, talleres mecánicos, potreros y cocinas; están llenas de tierra, de prisa, de orgullo y de silencios. Cada una es un retrato sin marco.
-      </p>
+  <!-- Sección entrevistas con PDF embebido -->
+<section class="seccion-entrevistas py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Entrevistas</h2>
+
+    <div class="row gy-5">
+ <!-- Mery Manosalva & María Bernal -->
+<div class="col-md-6 col-lg-4">
+  <div class="card h-100 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">Mery Manosalva & María Bernal</h5>
+      <p class="card-text">“Nosotras desde el Comité luchamos por tener agua todos los días…”</p>
+      <audio controls class="w-100 mb-2">
+        <source src="/audios/audio_Mery_Maria.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+      <a href="https://livejaverianaedu-my.sharepoint.com/:w:/r/personal/prosofi_javeriana_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B7B7721F6-CF10-4288-BF71-B67FED5E3B01%7D&file=VF_Mery%20Manosalva_María%20Bernal.docx&action=default&mobileredirect=true" 
+         class="btn btn-outline-primary w-100" 
+         target="_blank" rel="noopener noreferrer">
+        Ver transcripción
+      </a>
     </div>
-  </section>
+  </div>
+</div>
 
 
+      <!-- Entrevista María Bernal -->
+<div class="col-md-6 col-lg-4">
+  <div class="card h-100 shadow-sm p-3">
+    <h5 class="card-title mb-2">María Bernal</h5>
+    <p class="card-text small">“Desde pequeña vi cómo mi mamá recogía el agua del río y la hervía…”</p>
+    <audio controls class="w-100 mb-2">
+      <source src="/audios/audio_Maria_Bernal.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+    <a href="https://livejaverianaedu-my.sharepoint.com/:w:/r/personal/prosofi_javeriana_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B329D877A-F0C2-4E47-B704-B519D50CBD46%7D&file=VF_María%20Bernal.docx&action=default&mobileredirect=true" target="_blank" class="btn btn-outline-primary btn-sm w-100">Ver transcripción</a>
+  </div>
+</div>
 
-  <section class="seccion-videos py-5">
-    <div class="container">
-      <h2 class="fw-bold text-center mb-4">Videos sobre Usme</h2>
-  
-      <div class="row gy-4">
-        <!-- Video 1 -->
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/8Q5ICmQrlcM" title="¡Venga le Cuento! - Historia de los barrios usmeños: Danubio Azul" allowfullscreen></iframe>
-          </div>
-        </div>
-  
-        <!-- Video 2 -->
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/N2Qg8GDn-6k" title="Documental comunitario: 'USME La tierra compartidaria'" allowfullscreen></iframe>
-          </div>
-        </div>
-  
-        <!-- Video 3 -->
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/HZTMytmeGMw" title="Rutas de la Memoria - Temporada 3 - Capítulo Usme" allowfullscreen></iframe>
-          </div>
-        </div>
-  
-        <!-- Video 4 -->
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/ruX86x_iyvg" title="Tesoros de la Bogotá rural presentan un corto mágico de Usme" allowfullscreen></iframe>
-          </div>
-        </div>
-  
-        <!-- Video 5 -->
-        <div class="col-12">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/8JwMQv5mZiw" title="Donde la ciudad termina. Aprendizajes desde la zona de rural de Usme" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+      <!-- Martha Álvarez -->
+    <div class="col-md-6 col-lg-4">
+  <div class="card h-100 shadow-sm p-3">
+    <h5 class="text-center fw-bold text-orange mb-1">Martha Álvarez</h5>
+    <p class="text-center fst-italic small">“Cuando llegaron a abrir esa carretera fue que esto cambió de verdad…”</p>
+    <audio controls class="w-100 mb-2">
+      <source src="/audios/audio_Martha_Alvarez.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+    <a href="https://livejaverianaedu-my.sharepoint.com/:w:/r/personal/prosofi_javeriana_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B746F227A-A913-45F3-8A29-AE974B4FAD6C%7D&file=VF_Martha%20Álvarez.docx&action=default&mobileredirect=true"
+       target="_blank" class="btn btn-outline-primary w-100">
+      Ver transcripción
+    </a>
+  </div>
+</div>
+
+ <!-- Argeniz Itaz -->
+<div class="col-md-6 col-lg-4">
+  <div class="card h-100 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">Argeniz Itaz</h5>
+      <p class="card-text">“Esa planta potabilizadora de agua es lo más importante que hemos conseguido…”</p>
+      <audio controls class="w-100 mb-2">
+        <source src="/audios/audio_Argeniz_Itaz.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+      <a href="https://livejaverianaedu-my.sharepoint.com/:w:/r/personal/prosofi_javeriana_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B80DA86C0-4572-4A1D-8D52-5C7C2AC4B520%7D&file=VF_Argeniz%20Itaz%202020.docx&action=default&mobileredirect=true" target="_blank" class="btn btn-outline-primary w-100">Leer transcripción</a>
     </div>
-  </section>
+  </div>
+</div>
+
 
 
     <!-- SECCIÓN: Enlaces -->

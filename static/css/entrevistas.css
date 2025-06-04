@@ -27,41 +27,46 @@
     background-color: #444;
   }
   
-  /* Logos del header */
-  .logos img {
-    max-height: 80px;
-  }
+/* Logos del header */
+.logos {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.logos img {
+  max-height: 40px;
+  object-fit: contain;
+}
 
 /*-------*/
-/*-------*/
-  .seccion-entrevistas {
-    background-color: #f26f22;
-    color: white;
-    font-family: 'Helvetica Neue', sans-serif;
-  }
-  
-  .seccion-entrevistas h2 {
-    font-size: 2.8rem;
-  }
-  
-  .texto-entrevista {
-    font-size: 1.5rem;
-    line-height: 2;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-/*-------*/
-/*-------*/
+.card.entrevista {
+  padding: 1rem;
+  height: auto;
+  min-height: unset;
+}
 
-  .seccion-videos {
-    background-color: #f8f9fa;
-  }
-  
-  .seccion-videos h2 {
-    color: #343a40;
-  }
+.card.entrevista h5 {
+  font-size: 1.1rem;
+  color: #d35400; /* naranja */
+  margin-bottom: 0.5rem;
+}
 
-      /*-------*/
+.card.entrevista p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card.entrevista audio {
+  margin-bottom: 0.5rem;
+}
+
+.card.entrevista .btn {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+
 /*-------*/
   /* Enlaces institucionales */
 .enlaces-informacion {

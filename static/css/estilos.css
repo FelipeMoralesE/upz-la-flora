@@ -30,8 +30,15 @@
 }
 
 /* Logos del header */
+.logos {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
 .logos img {
-  max-height: 80px;
+  max-height: 40px;
+  object-fit: contain;
 }
 
 /*-------*/

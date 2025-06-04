@@ -27,10 +27,17 @@
     background-color: #444;
   }
   
-  /* Logos del header */
-  .logos img {
-    max-height: 80px;
-  }
+/* Logos del header */
+.logos {
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.logos img {
+  max-height: 40px;
+  object-fit: contain;
+}
 
   /*-------*/
 /*-------*/
