@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ruta de Memoria | Caminos para la Paz y la Memoria Tywa Khe</title>
+    <meta name="description"
+        content="Recorre los murales de la Ruta de la Memoria en La Flora y explora debajo el mapa interactivo de Usme con sus puntos históricos." />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/upz-la-flora/css/global-nav.css" />
+    <link rel="stylesheet" href="/upz-la-flora/css/autores.css?v=20260929" />
+    <link rel="stylesheet" href="/upz-la-flora/css/visual-refresh.css?v=20260929" />
+</head>
+
+<body class="route-page">
+    {{ partial "site-nav.html" . }}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- HERO de página -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-hero-badge">Arte · Memoria · Territorio</span>
+            <h1>Ruta de la Memoria</h1>
+            <p>Explora cinco murales que reúnen historias, luchas y memorias de los barrios altos de Usme.</p>
+            <a class="btn-ruta-cta mt-3" href="/upz-la-flora/app-motiv-arche/">
+                Recorrer la ruta con realidad aumentada
+                <i data-lucide="arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+    <div class="shimmer-bar"></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- SECCIÓN: Carousel de Murales -->
+        <section class="route-explorer">
+            <div class="container route-layout">
+                <div class="route-visual">
+                    <p class="route-label">Archivo mural</p>
+                    <div class="route-image-row">
+                        <button class="carousel-arrow" id="prevBtn" onclick="changeSlide(-1)" aria-label="Mural anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+                        <div class="carousel-main-image" id="currentImageContainer"></div>
+                        <button class="carousel-arrow" id="nextBtn" onclick="changeSlide(1)" aria-label="Mural siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="carousel-indicators" id="indicators" aria-label="Seleccionar mural"></div>
+                </div>
+
+                <article class="mural-info route-details">
+                    <p class="route-label">Historia del mural</p>
+                    <h2 id="muralTitle">Luchas por el Agua</h2>
+                    <p id="muralDescription" class="route-description"></p>
+                    <dl class="route-metadata">
+                        <div><dt>Autoría</dt><dd id="authorName"></dd></div>
+                        <div><dt>Ubicación</dt><dd id="locationInfo"></dd></div>
+                    </dl>
+                    <div id="authorImageContainer" class="route-author-image"></div>
+                    <div class="route-audio" id="audioPlayer">
+                        <span><i data-lucide="headphones" aria-hidden="true"></i> Relato sonoro</span>
+                        <audio id="muralAudio" controls>
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                    <p id="audioPending" class="route-pending d-none">Audio próximamente.</p>
+                    <a class="route-map-link" href="#mapa-ruta"><i data-lucide="map-pin" aria-hidden="true"></i> Ver ubicación en el mapa</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCION: Mapa Interactivo de Usme -->
+        <section id="mapa-ruta" class="seccion-mapa-interactivo py-5 text-center"
+            style="background: linear-gradient(180deg, #f4faf4 0%, #ffffff 100%);">
+            <div class="container">
+                <h2 class="mb-3 fw-bold" style="color:var(--verde);">Mapa Interactivo de Usme</h2>
+                <p class="mb-2" style="color:#5a7a5a;">Haz clic sobre los puntos para conocer más sobre cada mural y su
+                    autoría.</p>
+                <p class="small mb-4" style="color:#5a7a5a;">Ubicaciones provisionales, pendientes de confirmación por Jaroth.</p>
+                <div class="mapa-responsive rounded border shadow"
+                    style="border-color: rgba(199,115,96,0.3) !important; border-radius: 18px !important; overflow: hidden; box-shadow: 0 12px 40px rgba(82,120,100,0.15) !important; position: relative; padding-top: 56.25%;">
+                    <iframe
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1NiPhwWWYg4oflgoOaDXMuFx_laXAw2Y&ehbc=2E312F"
+                        width="100%" height="520"
+                        style="border: 0; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <br />
+    <!-- SECCIÓN: Aliados -->
+    <section class="patrocinadores text-center">
+        <div class="container py-5">
+            <p
+                style="color: rgba(199,115,96,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem;">
+                INSTITUCIONES &amp; ORGANIZACIONES</p>
+            <h3 class="mb-4">Aliados</h3>
+            <div class="d-flex flex-wrap justify-content-center align-items-stretch gap-3 gap-md-4 mt-3">
+                <a href="https://www.javeriana.edu.co/inicio" target="_blank" rel="noopener noreferrer">
+                    <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-javeriana.png" alt="Javeriana"
+                            height="55" loading="lazy" /></div>
+                </a>
+                <a href="https://www.javeriana.edu.co/compromiso-social/prosofi" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-prosofi.png" alt="PROSOFI" height="55"
+                            loading="lazy" /></div>
+                </a>
+                <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-ojds.png" alt="Observatorio"
+                            height="55" loading="lazy" /></div>
+                </a>
+                <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-colegio.png"
+                        alt="Colegio Gabriel García Márquez" height="55" loading="lazy" /></div>
+                <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-umb.png" alt="UMB" height="55"
+                        loading="lazy" /></div>
+                <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-sabios.png" alt="Sabios del Territorio"
+                        height="55" loading="lazy" /></div>
+                <div class="logo-card"><img src="/upz-la-flora/img_Home/logo-tunalito.png" alt="Tunalito" height="55"
+                        loading="lazy" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: Enlaces -->
+    <section class="enlaces-informacion text-center py-5">
+        <h4 class="mb-4">Ingresa a estos sitios para conocer más de La Flora</h4>
+        <div class="d-flex flex-wrap justify-content-center gap-5">
+            <a href="https://upz52laflora.wixsite.com/laflorausme/multimedia" target="_blank" rel="noopener noreferrer">
+                <img src="/upz-la-flora/img_Home/upz-la-flora.png" alt="UPZ 52 - La Flora" height="80"
+                    class="link-image" loading="lazy" />
+            </a>
+            <a href="https://sensolabjaveriana.wixsite.com/observatorio-javeria" target="_blank"
+                rel="noopener noreferrer">
+                <img src="/upz-la-flora/img_Home/observatorio-desigualdades.png" alt="Observatorio Javeriano"
+                    height="80" class="link-image" loading="lazy" />
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- JavaScript for Carousel Functionality -->
+    <script>
+        const muralsData = [{
+                id: 7,
+                image: "/upz-la-flora/gif_murales/opMural7.gif",
+                title: "Luchas por el Agua",
+                description: "Este mural retrata las luchas históricas de los habitantes de los barrios altos de Usme por el acceso al agua potable. A través de una línea del tiempo, la obra destaca hitos importantes del territorio, iniciando en 1957 con la construcción de la cervecería colombo-alemana y llegando hasta 2003 con la construcción de la planta de tratamiento de agua potable que actualmente abastece el sector. La pieza resalta la organización comunitaria y la defensa del derecho al agua como parte fundamental de la memoria territorial.",
+                author: "Goruz y Bone",
+                location: "Barrio Juan José Rondón",
+                audio: "/upz-la-flora/audio/audioMural7.mp3",
+                authorImage: "/upz-la-flora/img_Autores/artistasM7.jpg"
+            },
+            {
+                id: 8,
+                image: "/upz-la-flora/gif_murales/opMural8.gif",
+                title: "Lugares de la Memoria",
+                description: "El mural reúne distintos lugares emblemáticos en la historia de los barrios altos de Usme, convirtiéndolos en símbolos de memoria colectiva. Entre ellos se destacan el Colegio Gabriel García Márquez, autoconstruido en 1977; el Domo de Villarosita; el antiguo paradero y las ruinas del puesto de control del bosque. Cada espacio retratado representa historias comunitarias, procesos organizativos y experiencias que han marcado la identidad del territorio.",
+                author: "Skinny (César León), integrante de Guakes del Zuque",
+                location: "Barrio Tiguaque",
+                audio: "/upz-la-flora/audio/audioM8.mp3",
+                authorImage: "/upz-la-flora/img_Autores/artistaM8M9M10.jpg"
+            },
+            {
+                id: 9,
+                image: "/upz-la-flora/gif_murales/opMural9.gif",
+                title: "Patrimonio Organizativo",
+                description: "Este mural exalta la riqueza organizativa y comunitaria presente en el territorio de Tiguaque. La obra destaca rostros de lideresas como Elizabeth Mosquera y la hermana Esther Castaño, integrante de las Hermanas Adoratrices, reconocidas por su trabajo comunitario. También se representan escenas de ollas comunitarias, procesos de autoconstrucción de vivienda y frases que evocan la solidaridad y la organización barrial. La pieza resalta la memoria colectiva y las luchas comunitarias que han fortalecido el tejido social del sector.",
+                author: "Colectivo Pirotecnia Negra",
+                location: "Barrio San Pedro",
+                audio: "",
+                authorImage: "/upz-la-flora/img_Autores/artistaM8M9M10.jpg"
+            },
+            {
+                id: 10,
+                image: "/upz-la-flora/gif_murales/opMural10.gif",
+                title: "Patrimonio Ambiental",
+                description: "Este mural es una representación del patrimonio ambiental y paisajístico de Tiguaque. La obra integra elementos de la flora y fauna local, paisajes rurales, viviendas y escenas cotidianas del territorio. También incluye la imagen de la lideresa Alba Rincón junto a sus mascotas, resaltando el vínculo entre comunidad, naturaleza y memoria. La pieza busca reconocer la riqueza ambiental y cultural que caracteriza al sector.",
+                author: "Colectivo Semilla",
+                location: "Barrio Las Violetas",
+                audio: "",
+                authorImage: "/upz-la-flora/img_Autores/artistaM8M9M10.jpg"
+            },
+            {
+                id: 11,
+                image: "/upz-la-flora/gif_murales/opMural11.gif",
+                title: "Modo de Vida Tiguaqueño",
+                description: "Esta obra retrata las formas de habitar y apropiarse del territorio por parte de la comunidad de TYWAKHE. El mural destaca el significado de la palabra “TYWAKHE”, incorpora rostros de habitantes del sector y elementos ambientales característicos de la zona. A través de escenas cotidianas y símbolos comunitarios, la pieza refleja las prácticas, saberes e identidades que construyen la vida colectiva en el territorio.",
+                author: "Wilmer Báez - Bastón Blanco",
+                location: "Fachada del Colegio Gabriel García Márquez, barrio Villa Diana",
+                audio: "",
+                authorImage: "/upz-la-flora/img_Autores/artistasM11.jpg"
+            },
+        ];
+
+        const muralsPageVersion = "20260929";
+        let currentSlide = 0;
+
+        function initCarousel() {
+            updateSlide();
+            createIndicators();
+            updateNavigationButtons();
+        }
+
+        function updateSlide() {
+            const mural = muralsData[currentSlide];
+            const container = document.getElementById("currentImageContainer");
+            container.innerHTML = "";
+
+            // Crear imagen (funciona para JPG y GIF)
+            const img = document.createElement("img");
+            img.src = mural.image;
+            img.alt = mural.title;
+            img.className = "img-fluid";
+            img.style.width = "100%";
+            img.style.height = "auto";
+            img.style.display = "block";
+            container.appendChild(img);
+
+            document.getElementById("muralTitle").textContent = mural.title;
+            document.getElementById("muralDescription").textContent = mural.description;
+            document.getElementById("authorName").textContent = mural.author;
+            document.getElementById("locationInfo").textContent = mural.location;
+            const audioElement = document.getElementById("muralAudio");
+            const audioPlayer = document.getElementById("audioPlayer");
+            const audioPending = document.getElementById("audioPending");
+            if (mural.audio) {
+                audioElement.src = mural.audio;
+                audioElement.load();
+                audioPlayer.classList.remove("d-none");
+                audioPending.classList.add("d-none");
+            } else {
+                audioElement.removeAttribute("src");
+                audioElement.load();
+                audioPlayer.classList.add("d-none");
+                audioPending.classList.remove("d-none");
+            }
+
+            // Agregar imagen de autores si existe
+            const authorImageContainer = document.getElementById("authorImageContainer");
+            authorImageContainer.innerHTML = "";
+            if (mural.authorImage) {
+                const authorImg = document.createElement("img");
+                authorImg.src = mural.authorImage;
+                authorImg.alt = "Imagen de autores - " + mural.title;
+                authorImg.className = "route-author-photo";
+                authorImg.style.maxWidth = "100%";
+                authorImageContainer.appendChild(authorImg);
+            }
+            updateURL();
+            updateIndicators();
+            updateNavigationButtons();
+        }
+
+        function createIndicators() {
+            const indicatorsContainer = document.getElementById("indicators");
+            indicatorsContainer.innerHTML = "";
+            muralsData.forEach((_, index) => {
+                const indicator = document.createElement("button");
+                indicator.className = "indicator";
+                indicator.onclick = () => goToSlide(index);
+                indicatorsContainer.appendChild(indicator);
+            });
+        }
+
+        function updateIndicators() {
+            document.querySelectorAll(".indicator").forEach((indicator, index) => {
+                indicator.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            prevBtn.style.visibility = currentSlide === 0 ? "hidden" : "visible";
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.style.visibility = currentSlide === muralsData.length - 1 ? "hidden" : "visible";
+            nextBtn.disabled = currentSlide === muralsData.length - 1;
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 0 && newSlide < muralsData.length) {
+                currentSlide = newSlide;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            if (slideIndex >= 0 && slideIndex < muralsData.length) {
+                currentSlide = slideIndex;
+                updateSlide();
+            }
+        }
+
+        function updateURL() {
+            const url = new URL(window.location);
+            url.searchParams.set("v", muralsPageVersion);
+            url.searchParams.set("mural", muralsData[currentSlide].id);
+            window.history.replaceState({}, "", url);
+            document.title = `UPZ La Flora - ${muralsData[currentSlide].title}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const versionParam = urlParams.get("v");
+            const muralParam = urlParams.get("mural");
+            if (versionParam !== muralsPageVersion) {
+                const redirectUrl = new URL(window.location);
+                redirectUrl.searchParams.set("v", muralsPageVersion);
+                if (muralParam) redirectUrl.searchParams.set("mural", muralParam);
+                window.location.replace(redirectUrl.toString());
+                return;
+            }
+            if (muralParam) {
+                const slideIndex = muralsData.findIndex(mural => mural.id === parseInt(muralParam));
+                if (slideIndex >= 0) currentSlide = slideIndex;
+            }
+            initCarousel();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowLeft") changeSlide(-1);
+            else if (e.key === "ArrowRight") changeSlide(1);
+        });
+
+        let touchStartX = 0,
+            touchEndX = 0;
+        document.addEventListener("touchstart", e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        document.addEventListener("touchend", e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (Math.abs(touchStartX - touchEndX) > 50) changeSlide(touchStartX - touchEndX > 0 ? 1 : -1);
+        });
+
+        // Scroll animations
+        const navbar = document.querySelector('.encabezado');
+        if (navbar) window.addEventListener('scroll', function () {
+            navbar.style.padding = window.scrollY > 40 ? '4px 12px' : '';
+        });
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        document.querySelectorAll('.mural-info, .logo-card').forEach(function (el) {
+            el.classList.add('fade-in-up');
+            obs.observe(el);
+        });
+    </script>
+    {{ partial "site-allies-footer.html" . }}
+</body>
+
+</html>
